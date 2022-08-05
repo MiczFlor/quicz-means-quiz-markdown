@@ -1,4 +1,4 @@
-# Conversion scripts
+# Installation
 
 The scripts don't need to *installed* as such, but your life will be easier if they are available from anywhere in the command line.
 The following explains how to make the scripts accessible in your terminal from anywhere in system.
