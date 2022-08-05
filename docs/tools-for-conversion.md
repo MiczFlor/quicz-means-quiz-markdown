@@ -22,3 +22,10 @@ This will
 
 > NOTE: see [the installation file](INSTALL.md) for information on how to make these scripts available in your command line prompt.
 
+## Convert QUICZ to JSON
+
+`quicz_convQuicz2Json.py`
+
+## Convert JSON to GIFT
+
+`quicz_convJson2Gift.py`
