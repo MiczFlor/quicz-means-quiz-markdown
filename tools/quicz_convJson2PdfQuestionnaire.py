@@ -109,9 +109,9 @@ if 'abstract' in test_questions['meta']:
 else:
     meta_pdf['abstract'] = ""
 # write MD format
-file_name_out = ((os.path.splitext(file_name_in)[0]) + '.md')
-with open(file_name_out, 'w') as f:
-    print("Converting to MD:\nTARGET: " + file_name_out)
+file_name_md = ((os.path.splitext(file_name_in)[0]) + '-' + str(hash(os.path.splitext(file_name_in)[0])) + '.md')
+with open(file_name_md, 'w') as f:
+    print("- Converting to temporary MD:" + file_name_md)
     if PDF_format == "A6":
         f.write("---\ngeometry: 'top=0.5cm, bottom=0cm, left=1cm, right=1cm'\npapersize: a6\ndocumentclass: article\nabstract: " + meta_pdf['abstract'] + "\ndate: " + meta_pdf['date_created'] + "\ntitle: " + meta_pdf['title'] + "\nsubtitle: " + meta_pdf['subtitle'] + "\n...\n")
         f.write('\n\n' + (os.path.basename(file_name_in)) + ' \pagebreak\n')
@@ -187,9 +187,7 @@ with open(file_name_out, 'w') as f:
             # write additional information (resources)
             if 'info' in test_questions['items'][q_num]:
                 f.write('\n\n')
-                print(test_questions['items'][q_num]['info'])
                 for info_id in test_questions['items'][q_num]['info']:
-                    print(info_id)
                     f.write(test_questions['items'][q_num]['info'][info_id]['key'].capitalize() + ': ')
                     if 'value' in test_questions['items'][q_num]['info'][info_id]:
                         f.write(test_questions['items'][q_num]['info'][info_id]['value'])
@@ -202,11 +200,10 @@ with open(file_name_out, 'w') as f:
         f.write(answers_end)
 
 # write PDF
-file_name_in = ((os.path.splitext(file_name_in)[0]) + '.md')
 file_name_out = ((os.path.splitext(file_name_in)[0]) + '.' + filename_suffix + '.pdf')
-print('- Writing ' + target_file_extension + ' to: ' + file_name_out)
-exec_string = "pandoc -i '" + file_name_in + "' -o '" + file_name_out + "'"
+exec_string = "pandoc -i '" + file_name_md + "' -o '" + file_name_out + "'"
 os.system(exec_string)
-#os.remove((os.path.splitext(file_name_in)[0]) + '.md')
+print('- Writing ' + target_file_extension + ' to: ' + file_name_out)
+os.remove(file_name_md)
 
     

@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "filename_source": "example-quicz.qcz",
+    "path_source": "/home/micz/Documents/github/quicz-means-quiz-markdown/tests/example-quicz.qcz",
+    "filename_target": "example-quicz.json",
+    "path_target": "/home/micz/Documents/github/quicz-means-quiz-markdown/tests/example-quicz.json",
+    "date_updated": "2022-08-05 12:43:50",
+    "title": "Quicz-Quiz",
+    "subtitle": "Quicz is a simple syntax for an effortless creation of quiz decks",
+    "abstract": "Markdown is at the heart of Quicz' simplicity. Inspired by the way pandoc allows meta information in markdown files, yaml variables can be added at the beginning of a quicz-file",
+    "date_created": "2022-08-05 12:43:50",
+    "path_origin": "/home/micz/Documents/github/quicz-means-quiz-markdown/tests/example-quicz.qcz"
+  },
+  "items": {
+    "1": {
+      "question": "Quicz is a very simple format for creating multiple choice questions with clear human-readability in mind. What syntax is it inspired by and based on?",
+      "answers": {
+        "1": {
+          "text": "markdown",
+          "bolean": true
+        },
+        "2": {
+          "text": "python",
+          "bolean": false
+        },
+        "3": {
+          "text": "html",
+          "bolean": false
+        }
+      },
+      "type": {
+        "multipleChoice": true
+      }
+    },
+    "2": {
+      "question": "More than one: What formats / languages are in the quicz repo?",
+      "answers": {
+        "1": {
+          "text": "markdown",
+          "bolean": true
+        },
+        "2": {
+          "text": "python",
+          "bolean": true
+        },
+        "3": {
+          "text": "c++",
+          "bolean": false
+        }
+      },
+      "type": {
+        "multipleChoice": true
+      }
+    },
+    "3": {
+      "question": "Where do I find more information about quicz?",
+      "answers": {
+        "1": {
+          "text": "github",
+          "bolean": true
+        },
+        "2": {
+          "text": "wikipedia",
+          "bolean": false
+        }
+      },
+      "type": {
+        "multipleChoice": true
+      },
+      "info": {
+        "3": {
+          "key": "source",
+          "url": "https://github.com/MiczFlor/quicz-means-quiz-markdown"
+        }
+      }
+    },
+    "4": {
+      "question": "Lazy version of the first question: Quicz is a very simple format for creating multiple choice questions with clear human-readability in mind. What syntax is it inspired by and based on?",
+      "answers": {
+        "1": {
+          "text": "markdown was the inspiration",
+          "bolean": true
+        },
+        "2": {
+          "text": "python lead the way",
+          "bolean": false
+        },
+        "3": {
+          "text": "html is markup as well as hypertext",
+          "bolean": false
+        }
+      },
+      "type": {
+        "multipleChoice": true
+      },
+      "info": {
+        "4": {
+          "key": "tags",
+          "value": "html, md, py"
+        }
+      }
+    }
+  }
+}

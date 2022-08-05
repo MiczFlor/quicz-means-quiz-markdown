@@ -29,3 +29,23 @@ This will
 ## Convert JSON to GIFT
 
 `quicz_convJson2Gift.py`
+
+## Convert JSON to PDF questionnaire
+
+* Requires `pandoc` to be installed.
+* Will create an A4 sized pen and paper questionnaire as handout
+* Last page contains all the answers
+
+`quicz_convJson2PdfQuestionnaire.py`
+
+## Convert JSON to PDF Flashcards
+
+* Requires `pandoc` to be installed.
+* Will create small A6 sized flashcards
+* Alternating pages: 
+    * first page shows question without answers
+    * second page shows correct answers
+
+`quicz_convJson2PdfFlashcards.py`
+
+ 

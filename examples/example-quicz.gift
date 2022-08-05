@@ -1,0 +1,37 @@
+//"filename_source" : "example-quicz.json"
+//"path_source" : "/home/micz/Documents/github/quicz-means-quiz-markdown/tests/example-quicz.json"
+//"filename_target" : "example-quicz.gift"
+//"path_target" : "/home/micz/Documents/github/quicz-means-quiz-markdown/tests/example-quicz.gift"
+//"date_updated" : "2022-08-05 12:43:50"
+//"title" : "Quicz-Quiz"
+//"subtitle" : "Quicz is a simple syntax for an effortless creation of quiz decks"
+//"abstract" : "Markdown is at the heart of Quicz' simplicity. Inspired by the way pandoc allows meta information in markdown files, yaml variables can be added at the beginning of a quicz-file"
+//"date_created" : "2022-08-05 12:43:50"
+//"path_origin" : "/home/micz/Documents/github/quicz-means-quiz-markdown/tests/example-quicz.qcz"
+::IDexample-quicz-1::[markdown]Quicz is a very simple format for creating multiple choice questions with clear human-readability in mind. What syntax is it inspired by and based on?
+{
+  ~%100%markdown
+  ~python
+  ~html
+}
+
+::IDexample-quicz-2::[markdown]More than one: What formats / languages are in the quicz repo?
+{
+  ~%50%markdown
+  ~%50%python
+  ~c++
+}
+
+::IDexample-quicz-3::[markdown]Where do I find more information about quicz?
+{
+  ~%100%github
+  ~wikipedia
+}
+
+::IDexample-quicz-4::[markdown]Lazy version of the first question: Quicz is a very simple format for creating multiple choice questions with clear human-readability in mind. What syntax is it inspired by and based on?
+{
+  ~%100%markdown was the inspiration
+  ~python lead the way
+  ~html is markup as well as hypertext
+}
+
