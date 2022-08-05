@@ -94,7 +94,8 @@ In the root of the cloned repo, type the following:
 This will
 
 1. read the file `example-quicz.qcz`
+2. convert it to JSON
+3. save the output to `example-quicz.json`
 
-This will create a json file of the quicz content. 
-I decided to go through json as a *master* format.
+I decided to go through json as a *master* format for any conversion to other formats.
 
