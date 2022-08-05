@@ -40,6 +40,6 @@ Repeat the above steps for the scripts you want to be available in the command l
 
 ~~~
 sudo ln -s /path/to/repo/quicz-means-quiz-markdown/tools/quicz_convJson2Gift.py /usr/local/bin/quicz_convJson2Gift
+sudo ln -s /path/to/repo/quicz-means-quiz-markdown/tools/quicz_convJson2PdfQuestionnaire.py /usr/local/bin/quicz_convJson2PdfQuestionnaire
+sudo ln -s /path/to/repo/quicz-means-quiz-markdown/tools/quicz_convJson2PdfFlashcards.py /usr/local/bin/quicz_convJson2PdfFlashcards
 ~~~
-
-
