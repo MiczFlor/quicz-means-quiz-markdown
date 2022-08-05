@@ -1,7 +1,8 @@
 
 ---
-Title: "The title of this set"
-Description: 'Inspired by pandoc, yaml variables can be added at the beginning of a quicz-file'
+title: "Quicz-Quiz"
+subtitle: Quicz is a simple syntax allowing the effortless creation of quiz decks
+abstract: 'Inspired by pandoc, yaml variables can be added at the beginning of a quicz-file'
 ...
 
 > Quicz is a very simple format for creating multiple choice questions

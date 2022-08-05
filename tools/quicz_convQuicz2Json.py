@@ -78,8 +78,6 @@ quiczSpecChar = ["+", "-", "*", ">", "["]
 #       MUST be one line
 #       MUST be preceded and followed by an empty line
 
-#/VARS
-
 date_current = time.strftime("%Y-%m-%d %H:%M:%S")
 qAllArr['meta']['filename_source'] = os.path.basename(file_name_in)
 qAllArr['meta']['path_source'] = os.path.abspath(file_name_in)
