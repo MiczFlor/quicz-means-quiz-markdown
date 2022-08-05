@@ -81,21 +81,3 @@ the inspiration
 as hypertext
 ~~~
 
-## Tools / Scripts
-
-Inside the `tools` directory are some scripts to do something with quicz files.
-So let's see what we get when we convert lazy, sloppy quicz into json.
-In the root of the cloned repo, type the following:
-
-~~~
-./scripts/quicz_convQuicz2Json.py -i tests/example-quicz.qcz
-~~~
-
-This will
-
-1. read the file `example-quicz.qcz`
-2. convert it to JSON
-3. save the output to `example-quicz.json`
-
-I decided to go through json as a *master* format for any conversion to other formats.
-
