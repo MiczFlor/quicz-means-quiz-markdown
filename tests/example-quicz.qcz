@@ -1,8 +1,8 @@
 
 ---
 title: "Quicz-Quiz"
-subtitle: Quicz is a simple syntax allowing the effortless creation of quiz decks
-abstract: 'Inspired by pandoc, yaml variables can be added at the beginning of a quicz-file'
+subtitle: Quicz is a simple syntax for an effortless creation of quiz decks
+abstract: "Markdown is at the heart of Quicz' simplicity. Inspired by the way pandoc allows meta information in markdown files, yaml variables can be added at the beginning of a quicz-file"
 ...
 
 > Quicz is a very simple format for creating multiple choice questions
@@ -19,6 +19,13 @@ What syntax is it inspired by and based on?
 + python
 - c++
 
+> Where do I find more information about quicz?
+
++ github
+- wikipedia
+
+[source](https://github.com/MiczFlor/quicz-means-quiz-markdown)
+
 > Lazy version of the first question: Quicz is a very simple format for creating 
   multiple choice questions with clear 
  human-readability in mind. What syntax is it 
@@ -31,5 +38,7 @@ the inspiration
 - html is markup as well 
 
 as hypertext
+
+[tags](html, md, py)
 
 

@@ -69,18 +69,22 @@ meta['date_updated']    = date_current
 # print file name on top of each question?
 
 # setting for A4 print out to dry run
-PDF_print_filename = True
+PDF_print_filename = False
 PDF_print_solutions_inline = False
 PDF_print_answers_end = True
 PDF_format = "A4" # A4 or A6
+filename_suffix = "questionnaire"
+# print document ID (if exists) on top of each question?
+PDF_print_question_id = False
 
 # setting for A6 decks to learn
 PDF_print_filename = True
 PDF_print_solutions_inline = True
 PDF_print_answers_end = False
 PDF_format = "A6" # A4 or A6
-# print question ID (if exists) on top of each question?
-question_id_print_PDF = True
+filename_suffix = "flashcard"
+# print document ID (if exists) on top of each question?
+PDF_print_question_id = True
 
 print('- Reading ' + source_file_extension + ' file: "' + file_name_in + '"')
 # Opening JSON file
@@ -112,7 +116,7 @@ with open(file_name_out, 'w') as f:
         f.write("---\ngeometry: 'top=0.5cm, bottom=0cm, left=1cm, right=1cm'\npapersize: a6\ndocumentclass: article\nabstract: " + meta_pdf['abstract'] + "\ndate: " + meta_pdf['date_created'] + "\ntitle: " + meta_pdf['title'] + "\nsubtitle: " + meta_pdf['subtitle'] + "\n...\n")
         f.write('\n\n' + (os.path.basename(file_name_in)) + ' \pagebreak\n')
     elif PDF_format == "A4":
-        f.write("---\ngeometry: 'top=2cm, bottom=2cm, left=2cm, right=2cm'\npapersize: a4\ndocumentclass: book\nabstract: " + meta_pdf['abstract'] + "\ndate: " + meta_pdf['date_created'] + "\ntitle: " + meta_pdf['title'] + "\nsubtitle: " + meta_pdf['subtitle'] + "\n...\n")
+        f.write("---\ngeometry: 'top=2cm, bottom=2cm, left=2cm, right=2cm'\npapersize: a4\ndocumentclass: book\ndate: " + meta_pdf['date_created'] + "\ntitle: " + meta_pdf['title'] + "\nsubtitle: " + meta_pdf['subtitle'] + "\n...\n")
         f.write('\n# ' + os.path.basename(file_name_in) + '\n')
         f.write('\n## ' + os.path.basename(file_name_in) + '\n')
     
@@ -124,7 +128,7 @@ with open(file_name_out, 'w') as f:
         if PDF_print_filename:
             text_topline =  text_topline + ' \linebreak\n *' + (os.path.basename(file_name_in)) + '*'
         if 'id' in test_questions['items'][q_num].keys():
-            if question_id_print_PDF:
+            if PDF_print_question_id:
                 text_topline = text_topline + ' \linebreak\n *' + test_questions['items'][q_num]['id'] + '*'
         text_topline =  text_topline + '\n\n'
         #################
@@ -180,13 +184,27 @@ with open(file_name_out, 'w') as f:
                 for aText_num in test_questions['items'][q_num]['answers']:
                     freeTextList.append(test_questions['items'][q_num]['answers'][aText_num]['text'])
                 f.write('\n\n' + ('; '.join(freeTextList)))
+            # write additional information (resources)
+            if 'info' in test_questions['items'][q_num]:
+                f.write('\n\n')
+                print(test_questions['items'][q_num]['info'])
+                for info_id in test_questions['items'][q_num]['info']:
+                    print(info_id)
+                    f.write(test_questions['items'][q_num]['info'][info_id]['key'].capitalize() + ': ')
+                    if 'value' in test_questions['items'][q_num]['info'][info_id]:
+                        f.write(test_questions['items'][q_num]['info'][info_id]['value'])
+                    if 'url' in test_questions['items'][q_num]['info'][info_id]:
+                        f.write('<' + test_questions['items'][q_num]['info'][info_id]['url'] + '>')
+
+                    
             f.write('\pagebreak\n\n')
+    # print the answers on the last page?
     if PDF_print_answers_end:
         f.write(answers_end)
 
 # write PDF
 file_name_in = ((os.path.splitext(file_name_in)[0]) + '.md')
-file_name_out = ((os.path.splitext(file_name_in)[0]) + '.pdf')
+file_name_out = ((os.path.splitext(file_name_in)[0]) + '.' + filename_suffix + '.pdf')
 print('- Writing ' + target_file_extension + ' to: ' + file_name_out)
 exec_string = "pandoc -i '" + file_name_in + "' -o '" + file_name_out + "'"
 os.system(exec_string)
