@@ -20,5 +20,5 @@ This will
 2. convert it to JSON
 3. save the output to `example-quicz.json` in the folder `tests`
 
-NOTE: see [install-tool-scripts.md](install-tool-scripts.md) for information on how to make these scripts available in your command line prompt.
+> NOTE: see [the installation file](INSTALL.md) for information on how to make these scripts available in your command line prompt.
 
