@@ -1,0 +1,34 @@
+
+---
+Title: "The title of this set"
+Description: 'Inspired by pandoc, yaml variables can be added at the beginning of a quicz-file'
+...
+
+> Quicz is a very simple format for creating multiple choice questions
+ with clear human-readability in mind.
+What syntax is it inspired by and based on?
+
++ markdown
+- python
+- html 
+
+> More than one: What formats / languages are in the quicz repo?
+
++ markdown
++ python
+- c++
+
+> Lazy version of the first question: Quicz is a very simple format for creating 
+  multiple choice questions with clear 
+ human-readability in mind. What syntax is it 
+inspired by and based on?
+
++ markdown was
+the inspiration
+
+-python lead the way
+- html is markup as well 
+
+as hypertext
+
+

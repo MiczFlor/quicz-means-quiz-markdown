@@ -84,10 +84,10 @@ date_current = time.strftime("%Y-%m-%d %H:%M:%S")
 qAllArr['meta']['filename_source'] = os.path.basename(file_name_in)
 qAllArr['meta']['path_source'] = os.path.abspath(file_name_in)
 qAllArr['meta']['filename_target'] = os.path.basename(file_name_out)
-qAllArr['meta']['path_target'] = file_name_out
-qAllArr['meta']['date_created'] = date_current
+qAllArr['meta']['path_target'] = os.path.abspath(file_name_out)
+qAllArr['meta']['date_updated'] = date_current
 
-print('- Reading Quicz file: "' + file_name_in + '"')
+print('- Reading ' + source_file_extension + ' file: "' + file_name_in + '"')
 with open(file_name_in) as file:
     lines = file.readlines()
 
@@ -148,27 +148,33 @@ for line in lines:
                 if line == "...":
                     qItemSection == 0
                 else:
-                    print ("INSIDE YAML starting YAML")
                     tempYaml = tempYaml + line + "\n"
             elif qItemSection is "question":
                 qAllArr['items'][counterQuestions]['question'] = qAllArr['items'][counterQuestions]['question'] + " " + line.strip()
             elif qItemSection is "answer":
                 qAllArr['items'][counterQuestions]['answers'][qAnswerCount]['text'] = qAllArr['items'][counterQuestions]['answers'][qAnswerCount]['text'] + " " + line.strip()
+
 # add metadata from YAML to meta section in JSON (if any)
 if tempYaml != 0:
-    metaYamlDisct = json.loads(json.dumps(yaml.safe_load(tempYaml)))
-    print(metaYamlDisct)
-    for itemId in metaYamlDisct:
-        qAllArr['meta'][str(itemId)] = metaYamlDisct[str(itemId)]
+    metaYamlDict = json.loads(json.dumps(yaml.safe_load(tempYaml)))
+    # add some meta information if missing
+    if 'date_created' not in metaYamlDict:
+        # creation date
+        metaYamlDict['date_created'] = date_current
+    if 'path_origin' not in metaYamlDict:
+        # path of the first file from which this started
+        metaYamlDict['path_origin'] = os.path.abspath(file_name_in)
+    for itemId in metaYamlDict:
+        qAllArr['meta'][str(itemId)] = metaYamlDict[str(itemId)]
     
-#print(metaYamlDisct['geometry'])
 # now drop all the *invalid* ones
+
 # to do so: handle the process in a dictionary
 qAllDict = json.loads(json.dumps(qAllArr))
+
 for itemId in qAllArr['items']:
     itemDict = json.loads(json.dumps(qAllArr['items'][itemId]))
     if 'question' not in itemDict:
-        print ("NO delete bc no question title")
         #print(qAllDict['items'].pop(itemId, None))
         del qAllDict['items'][str(itemId)]
 
@@ -191,5 +197,5 @@ print('- Number of questions found: ' + str(counterQuestions))
 # write JSON
 with open(file_name_out, 'w') as fp:
     json.dump(qAllDict, fp, indent=2)
-    print("Writing JSON to: " + file_name_out)
+    print('- Writing ' + target_file_extension + ' to: ' + file_name_out)
 
