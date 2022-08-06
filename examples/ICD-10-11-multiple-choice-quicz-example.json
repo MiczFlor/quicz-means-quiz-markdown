@@ -1,0 +1,311 @@
+{
+  "meta": {
+    "filename_source": "ICD-10-11-multiple-choice-quicz-example.qcz",
+    "path_source": "/home/micz/Documents/github/quicz-means-quiz-markdown/examples/ICD-10-11-multiple-choice-quicz-example.qcz",
+    "filename_target": "ICD-10-11-multiple-choice-quicz-example.json",
+    "path_target": "/home/micz/Documents/github/quicz-means-quiz-markdown/examples/ICD-10-11-multiple-choice-quicz-example.json",
+    "date_updated": "2022-08-06 14:22:13",
+    "title": "Comparing ICD-10 and ICD-11 Multiple Choice",
+    "subtitle": "What do you know about the 10th and 11th revision of the International Statistical Classification of Diseases and Related Health Problems (ICD)?",
+    "abstract": "A few questions about the 10th and 11th revision of the International Statistical Classification of Diseases and Related Health Problems (ICD), a medical classification list by the World Health Organization (WHO). It contains codes for diseases, signs and symptoms, abnormal findings, complaints, social circumstances, and external causes of injury or diseases.",
+    "date": "6th August 2022",
+    "date_created": "2022-08-06 14:22:13",
+    "path_origin": "/home/micz/Documents/github/quicz-means-quiz-markdown/examples/ICD-10-11-multiple-choice-quicz-example.qcz"
+  },
+  "items": {
+    "1": {
+      "question": "What does the abbreviation 'ICD' in relation to medical classification stand for?",
+      "answers": {
+        "1": {
+          "text": "International Classification of Diseases",
+          "bolean": true
+        },
+        "2": {
+          "text": "Interconnect Devices",
+          "bolean": false
+        },
+        "3": {
+          "text": "Image Capture and Display",
+          "bolean": false
+        },
+        "4": {
+          "text": "Irritant Contact Dermatitis",
+          "bolean": false
+        },
+        "5": {
+          "text": "Implanted Cardiac Defibrillator",
+          "bolean": false
+        }
+      },
+      "type": {
+        "multipleChoice": true
+      },
+      "info": {
+        "6": {
+          "key": "source",
+          "url": "https://acronyms.thefreedictionary.com/ICD"
+        }
+      }
+    },
+    "2": {
+      "question": "Which revision of the International Statistical Classification of Diseases and Related Health Problems (ICD) has been worked on as of 1983 and was first used by member states in 1994?",
+      "answers": {
+        "1": {
+          "text": "the 8th revision",
+          "bolean": false
+        },
+        "2": {
+          "text": "the 9th revision",
+          "bolean": false
+        },
+        "3": {
+          "text": "the 10th revision",
+          "bolean": true
+        },
+        "4": {
+          "text": "the 11th revision",
+          "bolean": false
+        }
+      },
+      "type": {
+        "multipleChoice": true
+      },
+      "info": {
+        "5": {
+          "key": "source",
+          "url": "https://en.wikipedia.org/wiki/ICD-10"
+        }
+      }
+    },
+    "3": {
+      "question": "When did the 11th revision (ICD-11) replace the ICD-10?",
+      "answers": {
+        "1": {
+          "text": "January 1, 2022",
+          "bolean": true
+        },
+        "2": {
+          "text": "January 1, 2021",
+          "bolean": false
+        },
+        "3": {
+          "text": "January 1, 2020",
+          "bolean": false
+        }
+      },
+      "type": {
+        "multipleChoice": true
+      },
+      "info": {
+        "4": {
+          "key": "source",
+          "url": "https://en.wikipedia.org/wiki/ICD-10"
+        }
+      }
+    },
+    "4": {
+      "question": "While the World Health Organization (WHO) manages and publishes the base version of the ICD, several member states have modified it to better suit their needs. These ICD-10 modifications differ in what way?",
+      "answers": {
+        "1": {
+          "text": "different number of codes",
+          "bolean": true
+        },
+        "2": {
+          "text": "different chapters",
+          "bolean": true
+        },
+        "3": {
+          "text": "different subcategories",
+          "bolean": true
+        },
+        "4": {
+          "text": "different coverage by health insurances",
+          "bolean": false
+        },
+        "5": {
+          "text": "different recommended treatments",
+          "bolean": false
+        }
+      },
+      "type": {
+        "multipleChoice": true
+      },
+      "info": {
+        "6": {
+          "key": "source",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20978452/"
+        }
+      }
+    },
+    "5": {
+      "question": "The ICD-10 base classification, the code set allows for a large number of codes and permits the tracking of many new diagnoses compared to the preceding ICD-9. The adapted versions modified by some member states may differ in a number of ways, and some national editions have expanded the code set even further; with some going so far as to add procedure codes. ICD-10-CM, for example, has over 70,000 codes. What is the most accurate description of the number of codes that can be tracked using the ICD-10 base classification?",
+      "answers": {
+        "1": {
+          "text": "more than 4,000 different codes",
+          "bolean": false
+        },
+        "2": {
+          "text": "more than 9,000 different codes",
+          "bolean": false
+        },
+        "3": {
+          "text": "more than 14,000 different codes",
+          "bolean": true
+        },
+        "4": {
+          "text": "more than 140,000 different codes",
+          "bolean": false
+        }
+      },
+      "type": {
+        "multipleChoice": true
+      },
+      "info": {
+        "5": {
+          "key": "source",
+          "url": "https://en.wikipedia.org/wiki/ICD-10"
+        }
+      }
+    },
+    "6": {
+      "question": "The use of optional sub-classifications in ICD-10 allows for specificity regarding what criteria in the classification of injury or disease?",
+      "answers": {
+        "1": {
+          "text": "cause",
+          "bolean": true
+        },
+        "2": {
+          "text": "manifestation",
+          "bolean": true
+        },
+        "3": {
+          "text": "location",
+          "bolean": true
+        },
+        "4": {
+          "text": "severity",
+          "bolean": true
+        },
+        "5": {
+          "text": "type",
+          "bolean": true
+        },
+        "6": {
+          "text": "endurance",
+          "bolean": false
+        }
+      },
+      "type": {
+        "multipleChoice": true
+      },
+      "info": {
+        "7": {
+          "key": "source",
+          "url": "https://en.wikipedia.org/wiki/ICD-10"
+        }
+      }
+    },
+    "7": {
+      "question": "The content of the international version of the ICD-10 can be listed by chapter number (using Roman numerals), the code range of each chapter, and the chapter's title. 'Chapter I' (chapter number) for example has the block (code range of each chapter) of 'A00\u2013B99' and the chapter title 'Certain infectious and parasitic diseases'. Which chapter has the title 'Mental and behavioural disorders'?",
+      "answers": {
+        "1": {
+          "text": "Chapter II; block 'C00\u2013D48'",
+          "bolean": false
+        },
+        "2": {
+          "text": "Chapter III; block 'D50\u2013D89'",
+          "bolean": false
+        },
+        "3": {
+          "text": "Chapter IV; block 'E00\u2013E90'",
+          "bolean": false
+        },
+        "4": {
+          "text": "Chapter V; block 'F00\u2013F99'",
+          "bolean": true
+        },
+        "5": {
+          "text": "Chapter VI; block 'G00\u2013G99'",
+          "bolean": false
+        }
+      },
+      "type": {
+        "multipleChoice": true
+      },
+      "info": {
+        "6": {
+          "key": "source",
+          "url": "https://en.wikipedia.org/wiki/ICD-10"
+        }
+      }
+    },
+    "8": {
+      "question": "The 11th revision (ICD-11) currently provides access to 17 000 diagnostic categories, with over 100 000 medical diagnostic index terms. Which of the following titles are new core chapters?",
+      "answers": {
+        "1": {
+          "text": "'Diseases of the immune system\u2019",
+          "bolean": true
+        },
+        "2": {
+          "text": "'Sleep-wake disorders\u2019",
+          "bolean": true
+        },
+        "3": {
+          "text": "'Conditions related to sexual health\u2019",
+          "bolean": true
+        },
+        "4": {
+          "text": "'Railway accidents'",
+          "bolean": false
+        },
+        "5": {
+          "text": "'Certain conditions originating in the perinatal period'",
+          "bolean": false
+        }
+      },
+      "type": {
+        "multipleChoice": true
+      },
+      "info": {
+        "6": {
+          "key": "source",
+          "url": "https://www.who.int/publications/m/item/icd-11-fact-sheet"
+        }
+      }
+    },
+    "9": {
+      "question": "The World Health Organization (WHO) is interested in countries moving from ICD-10 to ICD-11. Which of the below arguments are most likely WHO arguments to make the move?",
+      "answers": {
+        "1": {
+          "text": "ICD\u201310 is scientifically and technologically outdated",
+          "bolean": true
+        },
+        "2": {
+          "text": "ICD\u201311 is a flexible system which eliminates the need for local variants",
+          "bolean": true
+        },
+        "3": {
+          "text": "Using ICD\u201311 lowers the overall costs due to less training requirements",
+          "bolean": true
+        },
+        "4": {
+          "text": "Some ICD-10 criteria are in violation with some member states legislation",
+          "bolean": false
+        },
+        "5": {
+          "text": "ICD-11 is the first fully electronic ICD and therefore supports UTF-8 character encoding",
+          "bolean": false
+        }
+      },
+      "type": {
+        "multipleChoice": true
+      },
+      "info": {
+        "6": {
+          "key": "source",
+          "url": "https://www.who.int/publications/m/item/icd-11-fact-sheet"
+        }
+      }
+    }
+  }
+}

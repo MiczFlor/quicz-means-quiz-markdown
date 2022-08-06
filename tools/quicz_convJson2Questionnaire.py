@@ -10,6 +10,7 @@ import getopt
 import shutil
 import time
 import datetime
+import random
 from collections import defaultdict
 import yaml
 tree = lambda: defaultdict(tree)
@@ -17,6 +18,8 @@ tree = lambda: defaultdict(tree)
 # VARS
 source_file_extension = 'json'
 output_formats_avail = ['docx', 'html', 'odt', 'pdf', 'rtf']
+lang_avail = ['de', 'en']
+lang_default = 'en'
 filename_suffix = "questionnaire"
 
 def main(argv):
@@ -24,19 +27,23 @@ def main(argv):
     inputfile = ''
     global outputfile
     outputfile = ''
+    global lang_used
+    lang_used = ''
     try:
         opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
     except getopt.GetoptError:
-        print(os.path.basename(__file__) + ' -i <source> -o <target>')
+        print(os.path.basename(__file__) + ' -i <source> -o <target> -l <language>')
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
-            print(os.path.basename(__file__) + ' -i <source> -o <target>')
+            print(os.path.basename(__file__) + ' -i <source> -o <target> -l <language>')
             sys.exit()
         elif opt in ("-i", "--ifile"):
             inputfile = arg
         elif opt in ("-o", "--ofile"):
             outputfile = arg
+        elif opt in ("-l", "--lang"):
+            lang_used = arg
 
 if __name__ == "__main__":
     main(sys.argv[1:])
@@ -64,7 +71,35 @@ else:
     print(output_formats_avail)
     sys.exit()
 
+if lang_used.strip() != "":
+    # check if lang available
+    if lang_used in lang_avail:
+        print ('Language used: "' + lang_used + '"')
+    else:
+        print ('Language "' + lang_used + '" is not available. Use one of these:')      
+        print(output_formats_avail)
+        lang_used = lang_default
+        print('Using default language: "' + lang_used + '"')
+else:
+    lang_used = lang_default
+    print('No language specified, using default: "' + lang_used + '"')
+
 # VARS
+
+# language strings
+langStrings = dict() # NOT using 'collections import defaultdict' and 'lambda: defaultdict(tree)' above
+langStrings['de']                   = dict()
+langStrings['de']['answers']        = "Antworten"
+langStrings['de']['plsCheckTotal']  = "Bitte ankreuzen"
+langStrings['de']['solution']       = "Lösung"
+langStrings['de']['source']         = "Quelle"
+
+langStrings['en']                   = dict()
+langStrings['en']['answers']        = "Answers"
+langStrings['en']['plsCheckTotal']  = "Answers to check"
+langStrings['en']['solution']       = "Solution"
+langStrings['en']['source']         = "Source"
+# / language strings
 
 #metadata
 date_current            = time.strftime("%Y-%m-%d %H:%M:%S")
@@ -75,9 +110,11 @@ meta['filename_target'] = os.path.basename(file_name_out)
 meta['path_target']     = os.path.abspath(file_name_out)
 meta['date_updated']    = date_current
 
-# print file name on top of each question?
 
-# setting for A4 print out to dry run
+answers_random          = dict() # to make sure the order with the answers is the same as the questions
+
+# setting for A4 questionnaire printout
+PDF_answers_shuffle = True
 PDF_print_filename = False
 PDF_print_solutions_inline = False
 PDF_print_answers_end = True
@@ -124,7 +161,7 @@ with open(file_name_md, 'w') as f:
         #f.write('\n## ' + os.path.splitext(file_name_in)[0] + '\n')
     
     if PDF_print_answers_end:
-        answers_end = "\n# Antworten\n\n"
+        answers_end = "\n# " + langStrings[lang_used]['answers'] + "\n\n"
 
     for q_num in test_questions['items']:
         text_topline = '\n\n**' + q_num + '**'
@@ -143,18 +180,22 @@ with open(file_name_md, 'w') as f:
             answerNumList = list()
 
         if 'multipleChoice' in test_questions['items'][q_num]['type']:
-            answer_ids = test_questions['items'][q_num]['answers'].keys()
+            answer_ids = list(test_questions['items'][q_num]['answers'].keys())
+            # if set above to true, the answers will be shuffled before printing
+            if PDF_answers_shuffle: 
+                random.shuffle(answer_ids)
+            answers_random[q_num] = answer_ids
             # correct answers counter to zero
             answers_correct = 0
             answers_counter = 0
-            for answer_id in answer_ids:
+            for answer_id in answers_random[q_num]:
                 answers_counter = answers_counter + 1
                 if test_questions['items'][q_num]['answers'][answer_id]['bolean']:
                     answers_correct = answers_correct + 1
                     if PDF_print_answers_end:
                         answerNumList.append(str(answers_counter))
 #                        answers_end = answers_end + str(answers_counter) + ", "
-            f.write(' \n\n(Bitte ankreuzen: ' + str(answers_correct) + ')\n\n')
+            f.write(' \n\n(' + langStrings[lang_used]['plsCheckTotal'] +': ' + str(answers_correct) + ')\n\n')
             for answer_id in answer_ids:
                 f.write('1. ' + test_questions['items'][q_num]['answers'][answer_id]['text'] + '\n')
             if PDF_print_answers_end:
@@ -171,12 +212,11 @@ with open(file_name_md, 'w') as f:
             f.write('\pagebreak\n\n')
             # with answers
             f.write(text_topline + test_questions['items'][q_num]['question'])
-            f.write(' \n\nLÖSUNG:\n\n')
+            f.write(' \n\n' + langStrings[lang_used]['solution'] + ':\n\n')
             if "multipleChoice" in test_questions['items'][q_num]['type']:
-                answer_ids = test_questions['items'][q_num]['answers'].keys()
                 # correct answers counter to zero
                 answers_correct = 0
-                for answer_id in answer_ids:
+                for answer_id in answers_random[q_num]:
                     answers_counter = answers_counter
                     if test_questions['items'][q_num]['answers'][answer_id]['bolean']:
                         answers_correct = answers_correct + 1

@@ -1,0 +1,14 @@
+# language strings
+langStrings = dict() # NOT using 'collections import defaultdict' and 'lambda: defaultdict(tree)' above
+langStrings['de']                   = dict()
+langStrings['de']['answers']        = "Antworten"
+langStrings['de']['plsCheckTotal']  = "Bitte ankreuzen"
+langStrings['de']['solution']       = "Lösung"
+langStrings['de']['source']         = "Quelle"
+
+langStrings['en']                   = dict()
+langStrings['en']['answers']        = "Answers"
+langStrings['en']['plsCheckTotal']  = "Answers to check"
+langStrings['en']['solution']       = "Solution"
+langStrings['en']['source']         = "Source"
+# / language strings

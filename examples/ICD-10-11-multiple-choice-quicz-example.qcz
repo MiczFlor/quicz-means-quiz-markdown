@@ -1,0 +1,102 @@
+
+---
+title: "Comparing ICD-10 and ICD-11 Multiple Choice"
+subtitle: What do you know about the 10th and 11th revision of the International Statistical Classification of Diseases and Related Health Problems (ICD)?
+abstract: "A few questions about the 10th and 11th revision of the International Statistical Classification of Diseases and Related Health Problems (ICD), a medical classification list by the World Health Organization (WHO). It contains codes for diseases, signs and symptoms, abnormal findings, complaints, social circumstances, and external causes of injury or diseases."
+date: '6th August 2022'
+...
+
+> What does the abbreviation 'ICD' in relation to medical classification stand for?
+
++ International Classification of Diseases
+- Interconnect Devices
+- Image Capture and Display
+- Irritant Contact Dermatitis
+- Implanted Cardiac Defibrillator
+
+[source](https://acronyms.thefreedictionary.com/ICD)
+
+> Which revision of the International Statistical Classification of Diseases and Related Health Problems (ICD) has been worked on as of 1983 and was first used by member states in 1994?
+
+- the 8th revision
+- the 9th revision
++ the 10th revision
+- the 11th revision
+
+[source](https://en.wikipedia.org/wiki/ICD-10)
+
+> When did the 11th revision (ICD-11) replace the ICD-10? 
+
++ January 1, 2022
+- January 1, 2021
+- January 1, 2020
+
+[source](https://en.wikipedia.org/wiki/ICD-10)
+
+> While the World Health Organization (WHO) manages and publishes the base version of the ICD, several member states have modified it to better suit their needs. These ICD-10 modifications differ in what way?
+
++ different number of codes
++ different chapters
++ different subcategories
+- different coverage by health insurances
+- different recommended treatments
+
+[source](https://pubmed.ncbi.nlm.nih.gov/20978452/)
+
+> The ICD-10 base classification, the code set allows for a large number of codes and permits the tracking of many new diagnoses compared to the preceding ICD-9.
+The adapted versions modified by some member states may differ in a number of ways, and some national editions have expanded the code set even further; with some going so far as to add procedure codes. ICD-10-CM, for example, has over 70,000 codes.
+What is the most accurate description of the number of codes that can be tracked using the ICD-10 base classification?
+
+- more than 4,000 different codes
+- more than 9,000 different codes
++ more than 14,000 different codes
+- more than 140,000 different codes
+
+[source](https://en.wikipedia.org/wiki/ICD-10)
+
+> The use of optional sub-classifications in ICD-10 allows for specificity regarding what criteria in the classification of injury or disease?
+
++ cause
++ manifestation
++ location
++ severity
++ type
+- endurance
+
+[source](https://en.wikipedia.org/wiki/ICD-10)
+
+> The content of the international version of the ICD-10 can be listed by chapter number (using Roman numerals), the code range of each chapter, and the chapter's title. 
+'Chapter I' (chapter number) for example has the block (code range of each chapter) of 'A00–B99' and the chapter title 'Certain infectious and parasitic diseases'.
+Which chapter has the title 'Mental and behavioural disorders'?
+
+- Chapter II; block 'C00–D48'
+- Chapter III; block 'D50–D89'
+- Chapter IV; block 'E00–E90'
++ Chapter V; block 'F00–F99'
+- Chapter VI; block 'G00–G99'
+
+[source](https://en.wikipedia.org/wiki/ICD-10)
+
+> The 11th revision (ICD-11) currently provides access to 17 000 diagnostic categories, with over 100 000 medical
+diagnostic index terms. 
+Which of the following titles are new core chapters?
+
++ 'Diseases of the immune system’
++ 'Sleep-wake disorders’
++ 'Conditions related to sexual health’
+- 'Railway accidents'
+- 'Certain conditions originating in the perinatal period'
+
+[source](https://www.who.int/publications/m/item/icd-11-fact-sheet)
+
+> The World Health Organization (WHO) is interested in countries moving from ICD-10 to ICD-11.
+Which of the below arguments are most likely WHO arguments to make the move?
+
++ ICD–10 is scientifically and technologically outdated
++ ICD–11 is a flexible system which eliminates the need for local variants
++ Using ICD–11 lowers the overall costs due to less training requirements
+- Some ICD-10 criteria are in violation with some member states legislation
+- ICD-11 is the first fully electronic ICD and therefore supports UTF-8 character encoding
+
+[source](https://www.who.int/publications/m/item/icd-11-fact-sheet)
+
