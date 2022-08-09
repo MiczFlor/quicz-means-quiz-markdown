@@ -42,6 +42,8 @@ Repeat the above steps for the scripts you want to be available in the command l
 sudo ln -s /path/to/repo/quicz-means-quiz-markdown/tools/quicz_convJson2Gift.py /usr/local/bin/quicz_convJson2Gift
 sudo ln -s /path/to/repo/quicz-means-quiz-markdown/tools/quicz_convJson2Questionnaire.py /usr/local/bin/quicz_convJson2Questionnaire
 sudo ln -s /path/to/repo/quicz-means-quiz-markdown/tools/quicz_convJson2PdfFlashcards.py /usr/local/bin/quicz_convJson2PdfFlashcards
+sudo ln -s /path/to/repo/quicz-means-quiz-markdown/tools/quicz_listAllQuiczInFolder.py /usr/local/bin/quicz_listAllQuiczInFolder
+sudo ln -s /path/to/repo/quicz-means-quiz-markdown/tools/quicz_listAllJsonInFolder.py /usr/local/bin/quicz_listAllJsonInFolder
+sudo ln -s /path/to/repo/quicz-means-quiz-markdown/tools/quicz_batchConvQuicz2Json.py /usr/local/bin/quicz_batchConvQuicz2Json
 ~~~
 
-sudo ln -s /home/micz/Documents/github/quicz-means-quiz-markdown/tools/quicz_convJson2Questionnaire.py /usr/local/bin/quicz_convJson2Questionnaire
