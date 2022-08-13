@@ -59,7 +59,7 @@ qAllArr             = tree() # using 'collections import defaultdict' and 'lambd
 counterQuestions    = 0 # counter for questions
 qAnswerCount        = 0 # counter for answers
 qItemSection        = 0 # to mark if metaYaml, question or answers
-tempYaml            = 0 # if metaYaml found not zero
+tempYaml            = "" # if metaYaml found not zero
 quiczSpecChar = ["+", "-", "*", ">", "["]
 
 # SPECIAL CHARACTERS
@@ -99,6 +99,7 @@ for line in lines:
             qItemSection = "metaYaml" # check later where to add the line
             tempYaml = ""
         elif firstChar is ">":
+            # starting a question
             # increment counter
             counterQuestions = counterQuestions + 1
             # reset counter of answers bc of new question item
@@ -153,7 +154,7 @@ for line in lines:
                 qAllArr['items'][counterQuestions]['answers'][qAnswerCount]['text'] = qAllArr['items'][counterQuestions]['answers'][qAnswerCount]['text'] + " " + line.strip()
 
 # add metadata from YAML to meta section in JSON (if any)
-if tempYaml != 0:
+if tempYaml.strip() != "":
     metaYamlDict = json.loads(json.dumps(yaml.safe_load(tempYaml)))
     # add some meta information if missing
     if 'date_created' not in metaYamlDict:
@@ -177,20 +178,6 @@ for itemId in qAllArr['items']:
         del qAllDict['items'][str(itemId)]
 
 print('- Number of questions found: ' + str(counterQuestions))
-
-#foreach($qAllArr['items'] as $key => $arr) {
-#    if(
-#        !(is_array($arr))
-#        || !(isset($arr['answers']))         // answers undefined
-#        || !(is_array($arr['answers']))      // answers not array
-#        || (count($arr['answers']) < 1)      // zero answer options
-#        || !(isset($arr['question']))        // question undefined
-#        || !(is_string($arr['question']))    // question not a string
-#        || count($arr['type']) != 1          // mix of question types (e.g. multipleChoice && freeText)     
-#        ) {
-#        unset($qAllArr['items'][$key]);
-#    }
-#}
 
 # write JSON
 with open(file_name_out, 'w') as fp:

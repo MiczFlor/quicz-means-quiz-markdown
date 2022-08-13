@@ -43,6 +43,9 @@ meta['date_updated']    = date_current
 
 answers_random          = dict() # to make sure the order with the answers is the same as the questions
 
+file_path_csv = 'quicz-counting-' + source_file_extension + '.csv'
+os.remove(file_path_csv)
+
 file_names = glob.glob('*.' + source_file_extension)
 
 for file_name_in in file_names:
@@ -59,10 +62,19 @@ for file_name_in in file_names:
     # Opening JSON file
     with open(file_name_in) as json_file:
         test_questions = json.load(json_file)
-           
-    print('--- Number of questions found in set: ' + str(len(test_questions['items'])))
+    
+    if 'items' in test_questions:
+        countQuestions = len(test_questions['items'])
+    else:
+        countQuestions = 0
+        
+    print('--- Number of questions found in set: ' + str(countQuestions))
 
-    counterQuestionsTotal = counterQuestionsTotal + int(len(test_questions['items']))
+    # write to csv file
+    with open(file_path_csv, 'a') as quiczcounting:
+        quiczcounting.write('"' + file_name_in + '", "' + str(countQuestions) + '"\n')
+
+    counterQuestionsTotal = counterQuestionsTotal + int(countQuestions)
 
 print('Count of total questions found: ' + str(counterQuestionsTotal))
 print('Searched through ' + str(len(file_names)) + ' ' + source_file_extension + ' files.')
